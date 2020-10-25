@@ -8,6 +8,7 @@ package workingdates;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -20,6 +21,9 @@ public class FindThisWeekByToDay {
     {        
         //        LocalDate localDate = LocalDate.of(2020, 03, 03);
         LocalDate localDateNow = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        
+        System.out.println("Bu gun (other format): " + formatter.format(localDateNow.now()) + " " + localDateNow.getDayOfWeek());   
         System.out.println("Bu gun : " + df.format(convertToDate(localDateNow)) + " " + localDateNow.getDayOfWeek());   
 
         LocalDate pLD = LocalDate.of(2020, 03, 02);
